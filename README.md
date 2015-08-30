@@ -26,3 +26,7 @@ gulp.task('server', ['build'], function() {
             .pipe(service('./build/server.js', { env: { NODE_ENV: 'development', DEBUG: '*' }}));
     });
 });
+```
+
+[0]: http://gulpjs.com
+[1]: https://www.npmjs.com/package/gulp-koa-service

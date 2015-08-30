@@ -1,4 +1,4 @@
-var through = require('through'),
+var through = require('through2'),
 	gutil = require('gulp-util'),
 	merge = require('deepmerge'),
 	PluginError = gutil.PluginError,
@@ -30,7 +30,7 @@ module.exports = function(script, options) {
 		env: process.env,
 		stdio: 'inherit'
 	}, options);
-	return through(function() {
+	return through.obj(function() {
 		if (server && server.kill) {
 			debug(info('Server is already running: ') + dbg(server.pid || 0));
 			server.kill('SIGTERM');

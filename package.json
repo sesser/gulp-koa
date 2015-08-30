@@ -1,0 +1,34 @@
+{
+  "name": "gulp-koa",
+  "version": "0.1.0",
+  "description": "Koa dev service (based on gulp-koa-service by CoLee <5969226@qq.com>)",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sesser/gulp-koa.git"
+  },
+  "keywords": [
+    "gulp",
+    "koa",
+    "gulpplugin"
+  ],
+  "author": "Randy Sesser <rsesser@local.com> (http://www.local.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sesser/gulp-koa/issues"
+  },
+  "homepage": "https://github.com/sesser/gulp-koa#readme",
+  "dependencies": {
+    "deepmerge": "^0.2.10",
+    "gulp-util": "^3.0.6",
+    "through2": "^2.0.0"
+  },
+  "devDependencies": {
+    "debug": "^2.2.0",
+    "mocha": "^2.2.5",
+    "should": "^7.1.0"
+  }
+}

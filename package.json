@@ -1,6 +1,6 @@
 {
   "name": "gulp-koa",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Koa dev service (based on gulp-koa-service by CoLee <5969226@qq.com>)",
   "main": "src/index.js",
   "scripts": {
@@ -22,12 +22,12 @@
   },
   "homepage": "https://github.com/sesser/gulp-koa#readme",
   "dependencies": {
+    "debug": "^2.2.0",
     "deepmerge": "^0.2.10",
     "gulp-util": "^3.0.6",
     "through2": "^2.0.0"
   },
   "devDependencies": {
-    "debug": "^2.2.0",
     "mocha": "^2.2.5",
     "should": "^7.1.0"
   }

@@ -12,6 +12,13 @@ var through = require('through2'),
 	server = null;
 
 
+function stop(){
+	if (server && server.kill) {
+		debug(info('Server is already running: ') + dbg(server.pid || 0));
+		server.kill('SIGTERM');
+		server = null;
+	}
+}
 
 module.exports = function(script, options) {
 	if (!script || typeof(script) !== "string") {
@@ -31,14 +38,12 @@ module.exports = function(script, options) {
 		stdio: 'inherit'
 	}, options);
 	return through.obj(function() {
-		if (server && server.kill) {
-			debug(info('Server is already running: ') + dbg(server.pid || 0));
-			server.kill('SIGTERM');
-			server = null;
-		}
+		stop();
 		
 		debug(info('Spawning new server with: ' + script));
 
 		server = spawn('node', ['--harmony', script], opts);
 	});
 }
+
+module.exports.stop = stop;

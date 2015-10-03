@@ -55,6 +55,7 @@ module.exports = function (script, options) {
         debug(info('Spawning new server with: ' + script));
         server = spawn('node', ['--harmony', script], opts);
         var pidPath = getPidPathFor(script);
+        mkdirp.sync(path.dirname(pidPath));
         fs.writeFileSync(pidPath, server.pid.toString());
         console.log('write pid ' + server.pid + ' to ' + pidPath);
         server.on('exit', function(code){

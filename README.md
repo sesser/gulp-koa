@@ -26,6 +26,11 @@ gulp.task('server', ['build'], function() {
             .pipe(service('./build/server.js', { env: { NODE_ENV: 'development', DEBUG: '*' }}));
     });
 });
+
+gulp.task('stop', function(){
+    // Stops a server (by pid)
+    service.stop('./build/server.js');
+});
 ```
 
 [0]: http://gulpjs.com
